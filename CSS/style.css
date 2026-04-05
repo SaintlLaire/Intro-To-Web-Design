@@ -1,0 +1,18 @@
+h1{
+color: rgb(51, 94, 172)
+
+}
+h2{
+    color: crimson;
+    text-decoration: overline;
+}
+
+h1, h2{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+p{
+    color: rgb(156, 39, 39);
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+}
