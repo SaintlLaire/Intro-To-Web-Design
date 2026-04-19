@@ -16,3 +16,17 @@ p{
     font-family: 'Arial', sans-serif;
     font-size: 18px;
 }
+#navbar{ 
+    background-color: rgb(156, 39, 39);
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+#navbar a:hover{
+    color: rgb(227, 229, 233);
+    text-decoration: none;
+}
+
+
+
