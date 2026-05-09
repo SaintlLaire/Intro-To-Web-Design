@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =============================================
+       META & HEAD — pages/services.html
+       The Services page displays the full equipment
+       catalog, rental pricing plans, and an FAQ
+       about the rental process itself.
+  ============================================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services &amp; Equipment — AgriRent Agricultural Rentals</title>
+
+  <!-- Google Fonts: Poppins -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Shared stylesheet (../ because this file is inside /pages/) -->
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+
+  <!-- ================================================
+       NAVIGATION BAR
+       "Services" link is marked .active.
+  ================================================ -->
+  <nav>
+    <a href="../index.html" class="nav-brand">AgriRent</a>
+
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+    </ul>
+
+    <a href="contact.html" class="nav-cta">Contact Us</a>
+  </nav>
+
+
+  <!-- ================================================
+       PAGE HERO BANNER
+       Dark green header with page title and description.
+       .page-hero adds top padding to clear the fixed nav.
+  ================================================ -->
+  <div class="page-hero">
+    <h1>Our Services &amp; Equipment</h1>
+    <p>
+      Browse our full fleet of rental machinery, explore maintenance
+      services, and choose a plan that fits your operation.
+    </p>
+  </div>
+
+
+  <!-- ================================================
+       SECTION: FULL EQUIPMENT CATALOG
+       Dark green background. All equipment cards are
+       displayed in a horizontally scrollable row.
+       Each card shows: photo, name, category, daily price.
+  ================================================ -->
+  <section class="catalog-section" id="catalog">
+
+    <div class="section-heading light">
+      <h2>Full Equipment Catalog</h2>
+      <p>From high-tech harvesters to maintenance essentials — browse our entire reliable fleet.</p>
+    </div>
+
+    <div class="catalog-scroll">
+
+      <!-- Card 1: Advanced Harvester -->
+      <div class="catalog-card">
+        <img
+          src="https://images.unsplash.com/photo-1591086741284-f29b6b0e2b83?w=400&q=80"
+          alt="Advanced combine harvester in wheat field"
+        />
+        <div class="card-icon">✕</div>
+        <div class="card-info">
+          <div>
+            <div class="card-name">Advanced Harvester</div>
+            <div class="card-type">Heavy Duty</div>
+          </div>
+          <div class="card-price">$450/day</div>
+        </div>
+      </div>
+
+      <!-- Card 2: Precision Plow -->
+      <div class="catalog-card">
+        <img
+          src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&q=80"
+          alt="Precision plow tilling a field"
+        />
+        <div class="card-icon">✕</div>
+        <div class="card-info">
+          <div>
+            <div class="card-name">Precision Plow</div>
+            <div class="card-type">Soil Prep</div>
+          </div>
+          <div class="card-price">$120/day</div>
+        </div>
+      </div>
+
+      <!-- Card 3: Irrigation Tech -->
+      <div class="catalog-card">
+        <img
+          src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=400&q=80"
+          alt="Modern irrigation system in a crop field"
+        />
+        <div class="card-icon">✕</div>
+        <div class="card-info">
+          <div>
+            <div class="card-name">Irrigation Tech</div>
+            <div class="card-type">Smart Farm</div>
+          </div>
+          <div class="card-price">$200/day</div>
+        </div>
+      </div>
+
+      <!-- Card 4: Machinery Repair -->
+      <div class="catalog-card">
+        <img
+          src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&q=80"
+          alt="Technician repairing agricultural machinery"
+        />
+        <div class="card-icon">✕</div>
+        <div class="card-info">
+          <div>
+            <div class="card-name">Machinery Repair</div>
+            <div class="card-type">Maintenance</div>
+          </div>
+          <div class="card-price">$80/hr</div>
+        </div>
+      </div>
+
+      <!-- Card 5: Seeder Units -->
+      <div class="catalog-card">
+        <img
+          src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400&q=80"
+          alt="Mechanical seeder unit planting crops"
+        />
+        <div class="card-icon">✕</div>
+        <div class="card-info">
+          <div>
+            <div class="card-name">Seeder Units</div>
+            <div class="card-type">Planting</div>
+          </div>
+          <div class="card-price">$150/day</div>
+        </div>
+      </div>
+
+      <!-- Card 6: Heavy Balers -->
+      <div class="catalog-card">
+        <img
+          src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=400&q=80"
+          alt="Large round baler in hay field"
+        />
+        <div class="card-icon">✕</div>
+        <div class="card-info">
+          <div>
+            <div class="card-name">Heavy Balers</div>
+            <div class="card-type">Hay Handling</div>
+          </div>
+          <div class="card-price">$300/day</div>
+        </div>
+      </div>
+
+      <!-- Card 7: Spray Units (extra card for the Services page) -->
+      <div class="catalog-card">
+        <img
+          src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=400&q=80"
+          alt="Crop spray unit in operation"
+        />
+        <div class="card-icon">✕</div>
+        <div class="card-info">
+          <div>
+            <div class="card-name">Crop Sprayer</div>
+            <div class="card-type">Pest Control</div>
+          </div>
+          <div class="card-price">$180/day</div>
+        </div>
+      </div>
+
+      <!-- Card 8: GPS Tractor (extra card for the Services page) -->
+      <div class="catalog-card">
+        <img
+          src="https://images.unsplash.com/photo-1624397640148-949b1732bb0a?w=400&q=80"
+          alt="GPS-guided smart tractor"
+        />
+        <div class="card-icon">✕</div>
+        <div class="card-info">
+          <div>
+            <div class="card-name">GPS Tractor</div>
+            <div class="card-type">Precision Tech</div>
+          </div>
+          <div class="card-price">$380/day</div>
+        </div>
+      </div>
+
+    </div><!-- end .catalog-scroll -->
+  </section>
+
+
+  <!-- ================================================
+       SECTION: MAINTENANCE SERVICES
+       A separate service highlight section explaining
+       the repair and maintenance services offered.
+       Uses a simple two-column card layout.
+  ================================================ -->
+  <section style="background:#f0efed; padding:80px 8%;">
+
+    <div class="section-heading centered">
+      <h2>Maintenance &amp; Support Services</h2>
+      <p>Keep your rented equipment running at full capacity with our expert team.</p>
+    </div>
+
+    <!-- Three service highlight cards arranged in a row -->
+    <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin-top:40px;">
+
+      <!-- Service card: Pre-Delivery Check -->
+      <div style="background:#fff; border-radius:20px; padding:32px 28px; flex:1; min-width:240px; max-width:320px; box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+        <div style="font-size:36px; margin-bottom:16px;">🔧</div>
+        <h3 style="font-size:18px; font-weight:600; color:#1a1a1a; margin-bottom:10px;">Pre-Delivery Service</h3>
+        <p style="font-size:13px; color:#666; line-height:1.7;">
+          Every piece of equipment is fully inspected, serviced, and tested
+          before it reaches your farm. We guarantee it arrives in peak condition.
+        </p>
+      </div>
+
+      <!-- Service card: On-Call Repairs -->
+      <div style="background:#fff; border-radius:20px; padding:32px 28px; flex:1; min-width:240px; max-width:320px; box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+        <div style="font-size:36px; margin-bottom:16px;">🚜</div>
+        <h3 style="font-size:18px; font-weight:600; color:#1a1a1a; margin-bottom:10px;">On-Call Field Repairs</h3>
+        <p style="font-size:13px; color:#666; line-height:1.7;">
+          Professional plan customers get a dedicated technician available
+          24/7. Any breakdown is responded to within 4 hours island-wide.
+        </p>
+      </div>
+
+      <!-- Service card: Operator Training -->
+      <div style="background:#fff; border-radius:20px; padding:32px 28px; flex:1; min-width:240px; max-width:320px; box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+        <div style="font-size:36px; margin-bottom:16px;">📚</div>
+        <h3 style="font-size:18px; font-weight:600; color:#1a1a1a; margin-bottom:10px;">Operator Training</h3>
+        <p style="font-size:13px; color:#666; line-height:1.7;">
+          New to a machine? Our trainers provide hands-on orientation
+          sessions to ensure your team can operate every rental safely and efficiently.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       SECTION: PRICING PLANS
+       Two white plan cards: Essential and Professional.
+       Clicking "Select" would normally link to the booking
+       flow or the contact page.
+  ================================================ -->
+  <div class="pricing-section" id="pricing">
+
+    <div class="section-heading centered">
+      <h2>Transparent Rental Plans</h2>
+      <p>Flexible plans for all farm sizes — no hidden fees.</p>
+    </div>
+
+    <div class="pricing-cards">
+
+      <!-- Plan 1: Essential -->
+      <div class="pricing-card">
+        <!-- Price displayed prominently at the top -->
+        <div class="price">$500/week</div>
+        <span class="plan-name">Essential Plan</span>
+
+        <!-- Feature checklist -->
+        <ul>
+          <li>Basic machinery access</li>
+          <li>Support 8am – 5pm Mon–Fri</li>
+          <li>Pre-delivery service check</li>
+          <li>Island-wide delivery (weekly+)</li>
+        </ul>
+
+        <!-- Link to contact page to begin booking -->
+        <a href="contact.html" class="btn-select">Select Plan</a>
+      </div>
+
+      <!-- Plan 2: Professional -->
+      <div class="pricing-card">
+        <div class="price">$1,200/week</div>
+        <span class="plan-name">Professional Plan</span>
+
+        <ul>
+          <li>Full machinery catalog access</li>
+          <li>24/7 on-call support</li>
+          <li>Emergency field repairs</li>
+          <li>Operator training session</li>
+          <li>Island-wide delivery included</li>
+        </ul>
+
+        <a href="contact.html" class="btn-select">Select Plan</a>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ================================================
+       SECTION: SERVICES FAQ
+       Accordion questions specifically about the
+       rental and service process.
+  ================================================ -->
+  <div class="faq-section" id="faq">
+
+    <!-- Left: heading -->
+    <div class="faq-left">
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know about our rental process.</p>
+    </div>
+
+    <!-- Right: accordion questions -->
+    <div class="faq-right">
+
+      <!-- Question 1 -->
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <span>How do I book equipment?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-answer">
+        Fill in our contact form, call us directly, or browse the online catalog
+        to select the equipment you need. We confirm availability within 24 hours.
+      </div>
+
+      <!-- Question 2 -->
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <span>Is maintenance included in the rental?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-answer">
+        Yes — all rentals include a full pre-delivery service. Professional plan
+        customers also receive priority on-call maintenance throughout their hire.
+      </div>
+
+      <!-- Question 3 -->
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <span>Do you deliver to farms?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-answer">
+        Absolutely. We deliver and collect across all 14 parishes in Jamaica.
+        Delivery is included in all weekly and seasonal hire packages.
+      </div>
+
+      <!-- Question 4 -->
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <span>What is the minimum rental period?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-answer">
+        Our minimum hire period is 1 day. Weekly and monthly packages offer
+        better value for longer operations.
+      </div>
+
+      <!-- Question 5 -->
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <span>Can I extend a rental mid-hire?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-answer">
+        Yes — contact our team at least 24 hours before your rental end date
+        and we will arrange an extension subject to availability.
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ================================================
+       FOOTER — same across all pages
+  ================================================ -->
+  <footer>
+    <div class="footer-wordmark">AgriRent</div>
+
+    <div class="footer-links">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <p class="footer-copy">© 2025 AgriRent Agricultural Solutions. All rights reserved.</p>
+  </footer>
+
+
+  <!-- ================================================
+       JAVASCRIPT — shared FAQ accordion toggle script
+  ================================================ -->
+  <script src="../js/faq.js"></script>
+
+</body>
+</html>

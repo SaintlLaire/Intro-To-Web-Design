@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =============================================
+       META & HEAD — index.html (Home Page)
+       This is the main landing page of AgriRent.
+       It links to the shared stylesheet and includes
+       all the core sections of the site.
+  ============================================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AgriRent — Reliable Agricultural Equipment Rentals</title>
+
+  <!-- Google Fonts: Poppins (brand font used across all pages) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Shared stylesheet (all CSS lives here — one file for all pages) -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+
+  <!-- ================================================
+       NAVIGATION BAR
+       Floating pill navbar — fixed at the top.
+       "Home" link is marked .active so it appears bold/green.
+       The same nav block appears on every page.
+  ================================================ -->
+  <nav>
+    <!-- Brand logo / name (links back to home) -->
+    <a href="index.html" class="nav-brand">AgriRent</a>
+
+    <!-- Page navigation links -->
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="pages/about.html">About</a></li>
+      <li><a href="pages/services.html">Services</a></li>
+    </ul>
+
+    <!-- Right-side CTA button (links to contact page) -->
+    <a href="pages/contact.html" class="nav-cta">Contact Us</a>
+  </nav>
+
+
+  <!-- ================================================
+       SECTION 1: HERO
+       Full-screen background image with headline,
+       subtext, and two call-to-action buttons.
+       Background image: a wide field / tractor scene.
+  ================================================ -->
+  <section
+    class="hero"
+    id="home"
+    style="background-image: url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1600&q=80');"
+  >
+    <div class="hero-content">
+      <!-- Main headline -->
+      <h1>Reliable Agricultural Equipment Rentals</h1>
+
+      <!-- Supporting paragraph -->
+      <p>
+        Premium machinery rental and expert maintenance services for modern
+        farmers. Keep your operations running at peak efficiency.
+      </p>
+
+      <!-- Two buttons: main CTA and a scrolling arrow -->
+      <div class="hero-buttons">
+        <a href="pages/services.html" class="btn-green">Explore Services</a>
+        <!-- Arrow button scrolls the user down to the About section -->
+        <a href="#about" class="btn-round-arrow">↓</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       SECTION 2: ABOUT PREVIEW
+       A dark green section introducing the company.
+       Contains a rounded image banner with overlaid text
+       and a stats row showing key numbers.
+       Full detail is on about.html.
+  ================================================ -->
+  <section class="about-section" id="about">
+
+    <!-- Rounded banner image with text overlay -->
+    <div class="about-banner">
+      <img
+        src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=1200&q=80"
+        alt="Aerial view of farming equipment in a field"
+      />
+      <!-- Text sits on top of the banner image -->
+      <div class="about-banner-text">
+        <h2>Dedicated to Farming Excellence</h2>
+        <p>
+          We specialise in providing top-tier machinery and comprehensive<br/>
+          maintenance support to ensure your fields are cultivated with<br/>
+          precision and reliability.
+        </p>
+      </div>
+    </div>
+
+    <!-- Heading for the stats sub-section -->
+    <div class="growth-heading">
+      <h2>Our Growth in Numbers</h2>
+      <p>We are proud of our continued contribution to the farming community.</p>
+    </div>
+
+    <!-- Stats row: two number boxes + farmer photo -->
+    <div class="stats-section">
+
+      <!-- White number cards -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Machines Deployed</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">15</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+      </div>
+
+      <!-- Supporting image of a farmer on a tractor -->
+      <div class="stats-image">
+        <img
+          src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&q=80"
+          alt="Farmer operating a tractor in a field"
+        />
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       SECTION 3: EQUIPMENT CATALOG PREVIEW
+       Dark green background with a horizontally scrollable
+       row of equipment cards. Each card shows a photo,
+       equipment name, category, and daily rate.
+       "See All Equipment" leads to services.html.
+  ================================================ -->
+  <section class="catalog-section" id="services">
+
+    <div class="section-heading light">
+      <h2>Our Equipment Catalog</h2>
+      <p>From high-tech harvesters to maintenance essentials — browse our reliable fleet.</p>
+    </div>
+
+    <!-- Scroll left or right to see all equipment cards -->
+    <div class="catalog-scroll">
+
+      <!-- Card 1: Advanced Harvester -->
+      <div class="catalog-card">
+        <img
+          src="https://images.unsplash.com/photo-1591086741284-f29b6b0e2b83?w=400&q=80"
+          alt="Advanced Harvester"
+        />
+        <div class="card-icon">✕</div>
+        <div class="card-info">
+          <div>
+            <div class="card-name">Advanced Harvester</div>
+            <div class="card-type">Heavy Duty</div>
+          </div>
+          <div class="card-price">$450/day</div>
+        </div>
+      </div>
+
+      <!-- Card 2: Precision Plow -->
+      <div class="catalog-card">
+        <img
+          src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&q=80"
+          alt="Precision Plow"
+        />
+        <div class="card-icon">✕</div>
+        <div class="card-info">
+          <div>
+            <div class="card-name">Precision Plow</div>
+            <div class="card-type">Soil Prep</div>
+          </div>
+          <div class="card-price">$120/day</div>
+        </div>
+      </div>
+
+      <!-- Card 3: Irrigation Tech -->
+      <div class="catalog-card">
+        <img
+          src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=400&q=80"
+          alt="Irrigation Technology System"
+        />
+        <div class="card-icon">✕</div>
+        <div class="card-info">
+          <div>
+            <div class="card-name">Irrigation Tech</div>
+            <div class="card-type">Smart Farm</div>
+          </div>
+          <div class="card-price">$200/day</div>
+        </div>
+      </div>
+
+      <!-- Card 4: Machinery Repair -->
+      <div class="catalog-card">
+        <img
+          src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&q=80"
+          alt="Machinery Repair Service"
+        />
+        <div class="card-icon">✕</div>
+        <div class="card-info">
+          <div>
+            <div class="card-name">Machinery Repair</div>
+            <div class="card-type">Maintenance</div>
+          </div>
+          <div class="card-price">$80/hr</div>
+        </div>
+      </div>
+
+      <!-- Card 5: Seeder Units -->
+      <div class="catalog-card">
+        <img
+          src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400&q=80"
+          alt="Seeder Units"
+        />
+        <div class="card-icon">✕</div>
+        <div class="card-info">
+          <div>
+            <div class="card-name">Seeder Units</div>
+            <div class="card-type">Planting</div>
+          </div>
+          <div class="card-price">$150/day</div>
+        </div>
+      </div>
+
+      <!-- Card 6: Heavy Balers -->
+      <div class="catalog-card">
+        <img
+          src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=400&q=80"
+          alt="Heavy Baler Machine"
+        />
+        <div class="card-icon">✕</div>
+        <div class="card-info">
+          <div>
+            <div class="card-name">Heavy Balers</div>
+            <div class="card-type">Hay Handling</div>
+          </div>
+          <div class="card-price">$300/day</div>
+        </div>
+      </div>
+
+    </div><!-- end .catalog-scroll -->
+  </section>
+
+
+  <!-- ================================================
+       SECTION 4: WHY CHOOSE US
+       A row of feature image cards, each overlaid with
+       a title, short description, and icon badge.
+  ================================================ -->
+  <div class="why-section">
+
+    <div class="section-heading centered">
+      <h2>Why Choose AgriRent?</h2>
+      <p>We combine industry-leading technology with practical field experience.</p>
+    </div>
+
+    <div class="why-cards">
+
+      <!-- Feature 1: 24/7 Support -->
+      <div class="why-card">
+        <img
+          src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&q=80"
+          alt="Support team member on the phone"
+        />
+        <div class="why-card-overlay">
+          <h3>24/7 Support</h3>
+          <p>Expert technicians ready to keep you moving.</p>
+        </div>
+        <div class="why-card-badge">📞</div>
+      </div>
+
+      <!-- Feature 2: Flexible Terms -->
+      <div class="why-card">
+        <img
+          src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400&q=80"
+          alt="Farmer reviewing rental contract"
+        />
+        <div class="why-card-overlay">
+          <h3>Flexible Terms</h3>
+          <p>Daily or seasonal rentals to fit your schedule.</p>
+        </div>
+        <div class="why-card-badge">📋</div>
+      </div>
+
+      <!-- Feature 3: Smart Farming -->
+      <div class="why-card">
+        <img
+          src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=400&q=80"
+          alt="Smart irrigation technology in a field"
+        />
+        <div class="why-card-overlay">
+          <h3>Smart Farming</h3>
+          <p>Optimise resource use with irrigation tech.</p>
+        </div>
+        <div class="why-card-badge">🌱</div>
+      </div>
+
+      <!-- Feature 4: Top Equipment -->
+      <div class="why-card">
+        <img
+          src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&q=80"
+          alt="High-end agricultural equipment"
+        />
+        <div class="why-card-overlay">
+          <h3>Top Equipment</h3>
+          <p>Only the best machinery from trusted brands.</p>
+        </div>
+        <div class="why-card-badge">⚙️</div>
+      </div>
+
+    </div><!-- end .why-cards -->
+  </div>
+
+
+  <!-- ================================================
+       SECTION 5: TESTIMONIALS
+       Horizontally scrollable row of customer review
+       cards, each with a photo, name, role, and quote.
+  ================================================ -->
+  <div class="testimonials-section">
+
+    <div class="section-heading">
+      <h2>Loved by Modern Farmers</h2>
+      <p>Hear from our partners in the field.</p>
+    </div>
+
+    <!-- Scroll left/right to browse all reviews -->
+    <div class="testimonials-scroll">
+
+      <div class="testimonial-card">
+        <img
+          src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=200&q=80"
+          alt="Portrait of John Doe"
+        />
+        <h3>John Doe</h3>
+        <span class="role">Farm Owner</span>
+        <p class="quote">Excellent service and well-maintained machinery. AgriRent keeps my farm productive year-round.</p>
+      </div>
+
+      <div class="testimonial-card">
+        <img
+          src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80"
+          alt="Portrait of Jane Smith"
+        />
+        <h3>Jane Smith</h3>
+        <span class="role">Cooperative Manager</span>
+        <p class="quote">Dependable equipment when I need it most. The team is always responsive and professional.</p>
+      </div>
+
+      <div class="testimonial-card">
+        <img
+          src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=200&q=80"
+          alt="Portrait of Bob Miller"
+        />
+        <h3>Bob Miller</h3>
+        <span class="role">Agricultural Lead</span>
+        <p class="quote">The maintenance team is top-notch. Any breakdown is resolved within hours — remarkable.</p>
+      </div>
+
+      <div class="testimonial-card">
+        <img
+          src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&q=80"
+          alt="Portrait of Alice Green"
+        />
+        <h3>Alice Green</h3>
+        <span class="role">Crop Specialist</span>
+        <p class="quote">My harvest went smoothly thanks to their harvesters. Best investment I made this season.</p>
+      </div>
+
+      <div class="testimonial-card">
+        <img
+          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80"
+          alt="Portrait of Dave Brown"
+        />
+        <h3>Dave Brown</h3>
+        <span class="role">Small Farm Operator</span>
+        <p class="quote">Great value and very easy process. I booked everything online in under 10 minutes.</p>
+      </div>
+
+    </div><!-- end .testimonials-scroll -->
+  </div>
+
+
+  <!-- ================================================
+       SECTION 6: CONTACT FORM PREVIEW
+       A quick contact card (left) + decorative image (right).
+       Full contact page is contact.html.
+  ================================================ -->
+  <div class="contact-section" id="contact">
+
+    <!-- Left: contact form card -->
+    <div class="contact-form-card">
+      <h2>Contact Our Rental Team</h2>
+      <p>Reach out for custom quotes or specific machinery requests.</p>
+
+      <!-- Name field -->
+      <input type="text" placeholder="Your Name" aria-label="Your Name" />
+
+      <!-- Email field -->
+      <input type="email" placeholder="Farm Email" aria-label="Farm Email" />
+
+      <!-- Submit button — in a real project this would POST to a server -->
+      <button class="btn-submit">Submit Enquiry</button>
+    </div>
+
+    <!-- Right: decorative photo of a sunflower farm -->
+    <div class="contact-image">
+      <img
+        src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&q=80"
+        alt="Farmer standing in a sunflower field"
+      />
+    </div>
+
+  </div><!-- end .contact-section -->
+
+
+  <!-- ================================================
+       FOOTER
+       White rounded card with large AgriRent wordmark,
+       quick navigation links, and copyright text.
+  ================================================ -->
+  <footer>
+    <!-- Giant brand wordmark -->
+    <div class="footer-wordmark">AgriRent</div>
+
+    <!-- Quick links row -->
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="pages/about.html">About</a>
+      <a href="pages/services.html">Services</a>
+      <a href="pages/contact.html">Contact</a>
+    </div>
+
+    <!-- Copyright notice -->
+    <p class="footer-copy">© 2025 AgriRent Agricultural Solutions. All rights reserved.</p>
+  </footer>
+
+
+  <!-- ================================================
+       JAVASCRIPT
+       Loads the shared FAQ toggle script.
+       The script file is shared across all pages.
+  ================================================ -->
+  <script src="js/faq.js"></script>
+
+</body>
+</html>
