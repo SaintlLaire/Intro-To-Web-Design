@@ -1,206 +1,397 @@
-*{
+/* ============================================================
+   style.css — AgriRent Shared Stylesheet
+   This ONE file is linked by ALL four pages:
+       index.html | about.html | services.html | contact.html
+   Save this file inside a folder called: CSS/
+   ============================================================ */
 
+
+/* ── RESET ────────────────────────────────────────────────────
+   Removes default browser spacing from every element.
+   box-sizing: border-box means padding and border are included
+   inside the element's width — makes sizing much easier.
+─────────────────────────────────────────────────────────────── */
+* {
     margin: 0;
     padding: 0;
-}
-/*Google Font*/
-.poppins-thin {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: normal;
+    box-sizing: border-box;
 }
 
-.poppins-light {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: normal;
+
+/* ── GOOGLE FONT UTILITY CLASSES ──────────────────────────────
+   Add these class names to any HTML element to apply a
+   specific Poppins weight.
+   Example:  <p class="poppins-bold">Hello</p>
+─────────────────────────────────────────────────────────────── */
+.poppins-thin         { font-family: "Poppins", sans-serif; font-weight: 100; font-style: normal; }
+.poppins-light        { font-family: "Poppins", sans-serif; font-weight: 300; font-style: normal; }
+.poppins-regular      { font-family: "Poppins", sans-serif; font-weight: 400; font-style: normal; }
+.poppins-medium       { font-family: "Poppins", sans-serif; font-weight: 500; font-style: normal; }
+.poppins-semibold     { font-family: "Poppins", sans-serif; font-weight: 600; font-style: normal; }
+.poppins-bold         { font-family: "Poppins", sans-serif; font-weight: 700; font-style: normal; }
+.poppins-extrabold    { font-family: "Poppins", sans-serif; font-weight: 800; font-style: normal; }
+.poppins-thin-italic  { font-family: "Poppins", sans-serif; font-weight: 100; font-style: italic; }
+
+
+/* ── GLOBAL HEADING & PARAGRAPH DEFAULTS ──────────────────────
+   Applied to every h1 and p on every page unless overridden.
+─────────────────────────────────────────────────────────────── */
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
 }
 
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+p {
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
 }
 
-.poppins-medium {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: normal;
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px 0;
+    font-family: 'Poppins', sans-serif;
 }
 
-.poppins-semibold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
 
-.poppins-bold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.poppins-extrabold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.poppins-thin-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: italic;
-}
-/*Global */
-
-
-
-.header{
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),url(/Images/spraying.jpg);
-    background-position: center;
-    background-size: cover;
-}
-nav{
+/* ══════════════════════════════════════════════════════════════
+   NAVIGATION BAR
+   The <nav> bar is used on every single page. It uses flexbox
+   to put the logo on the left and the links on the right.
+══════════════════════════════════════════════════════════════ */
+nav {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: center;            /* vertically centres items in the bar */
+    justify-content: space-between; /* pushes logo left, links right */
     padding: 2% 6%;
 }
 
-nav img{
+/* Logo image */
+nav img {
     width: 150px;
-    
 }
 
-nav links{
-    flex: 1;
-    text-align: right;
-}
-.nav-links ul li{
+/* Each nav link sits inline (side by side, not stacked) */
+.nav-links ul li {
     display: inline-block;
-    list-style: none;
+    list-style: none;               /* removes bullet points */
     padding: 8px 12px;
-    position: relative;
+    position: relative;             /* needed for the underline animation */
 }
-.nav-links ul li a{
+
+/* Nav link text */
+.nav-links ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 14px;
     font-family: 'Poppins', sans-serif;
-}   
-.nav-links ul li::after{
-    content: '';
+}
+
+/* Active page link — bold so user knows where they are */
+.nav-links ul li a.active {
+    font-weight: 700;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 2px;
+}
+
+/* Animated underline that grows on hover */
+.nav-links ul li::after {
+    content: '';       /* creates an empty element for the underline */
     width: 0%;
     height: 2px;
     background: #fff;
     display: block;
     margin: auto;
-    transition: 0.5s;
+    transition: 0.5s; /* controls how fast the underline grows */
 }
-.nav-links ul li:hover::after{
+
+.nav-links ul li:hover::after {
+    width: 100%;       /* underline expands to full width on hover */
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   HERO HEADER  (used on the Home page only — index.html)
+   Full-screen section with a background image and dark overlay.
+══════════════════════════════════════════════════════════════ */
+.header {
     width: 100%;
+    height: 100vh;  /* 100vh = full height of the browser window */
+
+    /* Two layers: dark overlay first, then the background image */
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+                      url(../Images/spraying.jpg);
+
+    background-position: center;
+    background-size: cover;
 }
-.text-box{
+
+
+/* ══════════════════════════════════════════════════════════════
+   SUB-HEADER  (used on About, Services, Contact pages)
+   A shorter banner — same dark overlay style but not full screen.
+   Gives inner pages a consistent header without being too large.
+══════════════════════════════════════════════════════════════ */
+.sub-header {
+    width: 100%;
+    height: 40vh;  /* 40% of screen height — shorter than the home hero */
+
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+                      url(../Images/spraying.jpg);
+
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   TEXT BOX  (used in both .header and .sub-header)
+   Positions the headline and button in the centre of the banner.
+   position: absolute + transform: translate(-50%, -50%)
+   is the standard trick for perfect centring.
+══════════════════════════════════════════════════════════════ */
+.text-box {
     width: 90%;
     color: #fff;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%); /* centres both horizontally and vertically */
     text-align: center;
 }
-.text-box h1{
+
+.text-box h1 {
     font-size: 62px;
+    color: #fff;
 }
-.text-box p{
+
+.text-box p {
     margin: 10px 0 40px;
     font-size: 14px;
     color: #fff;
 }
-.hero-btn{
+
+
+/* ══════════════════════════════════════════════════════════════
+   HERO BUTTON  (.hero-btn)
+   The "Learn More" / "Send Message" style button.
+   Transparent with a white border — fills white on hover.
+══════════════════════════════════════════════════════════════ */
+.hero-btn {
     display: inline-block;
     text-decoration: none;
     color: #fff;
     border: 1px solid #fff;
     padding: 13px 34px;
     font-size: 14px;
-    transition: 0.5s;
+    font-family: 'Poppins', sans-serif;
     background: transparent;
-    position: relative;
     cursor: pointer;
+    transition: 0.5s;   /* smooth colour change animation */
+    position: relative;
 }
-.hero-btn:hover{
+
+.hero-btn:hover {
     background: #fff;
-    color: #000;
+    color: #000;         /* text goes black when the button fills white */
 }
 
-/*To adjust to fit Screens*/
-@media(max-width: 700px){
-    .text-box h1{
-        font-size: 20px;
-    }
-}
-/*create media tag to adjust navigation for smaller screens*/
 
-
-/*Inventry Section*/
-.inventry{
-    width: 80%;
-    padding: 50px 0;
-    margin: auto;
-    text-align: center;
-    padding-top: 100px;
-}
-h1{
-    font-size: 36px;
-    font-weight: 600;
-}
-
-p{
-    color: #777;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 22px;
-    padding: 10px;
-}
-
-.row{
+/* ══════════════════════════════════════════════════════════════
+   ROW LAYOUT
+   Used to place cards or columns side by side.
+   display: flex puts children in a horizontal row.
+   justify-content: space-between spreads them out evenly.
+══════════════════════════════════════════════════════════════ */
+.row {
     display: flex;
     justify-content: space-between;
     margin-top: 5%;
 }
-.inventry-col{
-    flex-basis: 31%;
+
+
+/* ══════════════════════════════════════════════════════════════
+   INVENTORY SECTION  (.inventry)
+   The section with service cards, centred on the page.
+══════════════════════════════════════════════════════════════ */
+.inventry {
+    width: 80%;
+    margin: auto;         /* centres the section left-to-right */
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 60px;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   SERVICE CARDS  (.Rent-col and .Maintenance-col)
+   The pink-tinted cards inside the inventory section.
+   flex-basis: 38% means each card takes 38% of the row width.
+══════════════════════════════════════════════════════════════ */
+.Rent-col,
+.Maintenance-col {
+    flex-basis: 38%;       /* each card is 38% wide */
     padding: 20px 12px;
-    background: #fff3f3;
+    background: #fff3f3;   /* light pink/warm background */
     border-radius: 10px;
     margin-bottom: 5%;
     box-sizing: border-box;
-}
-h3{
-    font-size: 20px;
-    font-weight: 600;
-    margin: 10px 0;
-}
-/*To adjust to fit Screens....needs revision*/
-.inventry-col:hover{
-    box-shadow: 0 0px 20px 0px rgba(0,0,0,0.2);
+    text-align: left;
 }
 
-.service{
+/* Hover shadow effect on cards */
+.Rent-col:hover,
+.Maintenance-col:hover {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   SERVICE / IMAGE SECTION  (.service)
+   Used on the About and Services pages to show images.
+══════════════════════════════════════════════════════════════ */
+.service {
     width: 80%;
     padding-top: 50px;
+    padding-bottom: 50px;
     margin: auto;
     text-align: center;
 }
-.service{
-    flex-basis: 32%;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    position: hidden;
-}
-.service img{
+
+/* Images inside the service section fill their container */
+.service img {
     width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+/* Container that wraps image + overlay label */
+.service .row > div {
+    position: relative;  /* needed so .layer can sit on top of the image */
+    flex-basis: 100%;
+}
+
+/* Text overlay that appears on top of the image */
+.layer {
+    position: absolute;
+    bottom: 0;           /* sits at the bottom of the image */
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: rgba(4, 9, 30, 0.5); /* dark transparent overlay */
+    border-radius: 0 0 10px 10px;
+    color: #fff;
+}
+
+.layer h3 {
+    color: #fff;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   CONTACT SECTION  (.contact)
+   The form on the Contact page.
+══════════════════════════════════════════════════════════════ */
+.contact {
+    width: 60%;
+    margin: 80px auto;
+    text-align: center;
+}
+
+/* The form itself */
+.contact-form {
+    text-align: left;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column; /* stacks label + input vertically */
+    gap: 10px;              /* space between each field */
+}
+
+/* Labels above each input */
+.contact-form label {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+/* Text input fields and the textarea */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    outline: none;            /* removes browser default blue outline */
+    transition: border 0.3s;
+}
+
+/* Green border when a field is focused (clicked into) */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #2d6a3f;
+}
+
+/* textarea doesn't need to be resized by the user horizontally */
+.contact-form textarea {
+    resize: vertical;
+}
+
+/* Submit button — reuses the .hero-btn style but in dark colour */
+.contact-form .hero-btn {
+    align-self: flex-start; /* button stays left-aligned */
+    color: #333;
+    border-color: #333;
+    margin-top: 10px;
+}
+
+.contact-form .hero-btn:hover {
+    background: #333;
+    color: #fff;
+}
+
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE DESIGN — MOBILE  (screens 700px wide or less)
+   These rules override the styles above on small screens
+   like phones to keep the layout readable and usable.
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 700px) {
+
+    /* Smaller hero headline on phones */
+    .text-box h1 {
+        font-size: 28px;
+    }
+
+    /* Hide nav links on mobile (a hamburger menu would go here later) */
+    .nav-links {
+        display: none;
+    }
+
+    /* Stack cards vertically instead of side by side */
+    .row {
+        flex-direction: column;
+    }
+
+    /* Make each card full width on mobile */
+    .Rent-col,
+    .Maintenance-col {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Make the contact form full width on mobile */
+    .contact {
+        width: 90%;
+    }
+
 }
