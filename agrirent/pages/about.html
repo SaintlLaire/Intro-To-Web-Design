@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =============================================
+       META & HEAD — pages/about.html
+       The About page tells the story of AgriRent:
+       mission, history, stats, values, and team.
+       All CSS comes from the shared stylesheet one
+       level up in the css/ folder.
+  ============================================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — AgriRent Agricultural Equipment Rentals</title>
+
+  <!-- Google Fonts: Poppins -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Shared stylesheet (note the ../ because this file is inside /pages/) -->
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+
+  <!-- ================================================
+       NAVIGATION BAR
+       Same pill navbar as all other pages.
+       "About" link is marked .active.
+       Paths use ../ because this page is inside /pages/.
+  ================================================ -->
+  <nav>
+    <a href="../index.html" class="nav-brand">AgriRent</a>
+
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="services.html">Services</a></li>
+    </ul>
+
+    <a href="contact.html" class="nav-cta">Contact Us</a>
+  </nav>
+
+
+  <!-- ================================================
+       PAGE HERO BANNER
+       Dark green header section used on all inner pages.
+       Contains the page title and a short description.
+       The .page-hero class adds top padding to clear the
+       fixed navigation bar.
+  ================================================ -->
+  <div class="page-hero">
+    <h1>About AgriRent</h1>
+    <p>
+      Fifteen years of serving Jamaican farmers with reliable machinery,
+      expert support, and a commitment to agricultural excellence.
+    </p>
+  </div>
+
+
+  <!-- ================================================
+       SECTION: MISSION & BANNER IMAGE
+       Large rounded banner with a farming aerial photo
+       and overlaid mission statement text.
+  ================================================ -->
+  <section class="about-section" id="about">
+
+    <!-- Rounded image with overlaid text -->
+    <div class="about-banner">
+      <img
+        src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=1200&q=80"
+        alt="Aerial view of agricultural fields and equipment"
+      />
+      <div class="about-banner-text">
+        <h2>Dedicated to Farming Excellence</h2>
+        <p>
+          We specialise in providing top-tier machinery and comprehensive<br/>
+          maintenance support to ensure your fields are cultivated with<br/>
+          precision and reliability.
+        </p>
+      </div>
+    </div>
+
+    <!-- Sub-section: key stats heading -->
+    <div class="growth-heading">
+      <h2>Our Growth in Numbers</h2>
+      <p>We are proud of our continued contribution to the farming community.</p>
+    </div>
+
+    <!-- Stats row: number cards + farmer photo -->
+    <div class="stats-section">
+
+      <!-- Four white stat cards -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Machines Deployed</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">15</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">14</span>
+          <span class="stat-label">Parishes Served</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">2k+</span>
+          <span class="stat-label">Happy Farmers</span>
+        </div>
+      </div>
+
+      <!-- Supporting image beside the stat cards -->
+      <div class="stats-image">
+        <img
+          src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&q=80"
+          alt="Farmer operating a tractor at sunset"
+        />
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       SECTION: OUR STORY
+       A simple two-column text + image layout describing
+       the company's founding and values.
+       Inline style is used here to set a custom layout
+       without adding a new class to the stylesheet.
+  ================================================ -->
+  <section style="background:#f0efed; padding:80px 8%;">
+
+    <div style="display:flex; gap:60px; align-items:center; flex-wrap:wrap; max-width:1100px; margin:0 auto;">
+
+      <!-- Story text (left column) -->
+      <div style="flex:1; min-width:280px;">
+        <div class="section-heading">
+          <h2>Our Story</h2>
+          <p>From a small depot to Jamaica's most trusted equipment rental service.</p>
+        </div>
+        <p style="font-size:14px; color:#555; line-height:1.8; margin-bottom:16px;">
+          AgriRent was founded in 2010 by a team of agricultural engineers who saw
+          a gap in the Jamaican market. Small and mid-sized farms had no affordable
+          way to access modern machinery without making enormous capital investments.
+        </p>
+        <p style="font-size:14px; color:#555; line-height:1.8; margin-bottom:16px;">
+          Starting with a fleet of five tractors in St. Catherine, we now operate
+          island-wide, maintaining over 500 machines and supporting more than
+          2,000 farmers across all 14 parishes.
+        </p>
+        <p style="font-size:14px; color:#555; line-height:1.8;">
+          Our mission has never changed: to make professional-grade agricultural
+          equipment accessible, affordable, and always ready when you need it.
+        </p>
+      </div>
+
+      <!-- Story image (right column) -->
+      <div style="flex:1; min-width:280px; border-radius:20px; overflow:hidden; height:340px;">
+        <img
+          src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80"
+          alt="AgriRent team maintaining equipment in the workshop"
+          style="width:100%; height:100%; object-fit:cover;"
+        />
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       SECTION: WHY CHOOSE US
+       Feature image cards explaining AgriRent's key
+       differentiators. Uses the shared .why-section styles.
+  ================================================ -->
+  <div class="why-section">
+
+    <div class="section-heading centered">
+      <h2>Why Choose AgriRent?</h2>
+      <p>We combine industry-leading technology with practical field experience.</p>
+    </div>
+
+    <div class="why-cards">
+
+      <!-- Feature 1 -->
+      <div class="why-card">
+        <img
+          src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&q=80"
+          alt="Technical support worker assisting farmer"
+        />
+        <div class="why-card-overlay">
+          <h3>24/7 Support</h3>
+          <p>Expert technicians ready to keep you moving.</p>
+        </div>
+        <div class="why-card-badge">📞</div>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="why-card">
+        <img
+          src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400&q=80"
+          alt="Farmer reviewing flexible rental agreement"
+        />
+        <div class="why-card-overlay">
+          <h3>Flexible Terms</h3>
+          <p>Daily or seasonal rentals to fit your schedule.</p>
+        </div>
+        <div class="why-card-badge">📋</div>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="why-card">
+        <img
+          src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=400&q=80"
+          alt="Smart irrigation system in a crop field"
+        />
+        <div class="why-card-overlay">
+          <h3>Smart Farming</h3>
+          <p>Optimise resource use with irrigation tech.</p>
+        </div>
+        <div class="why-card-badge">🌱</div>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="why-card">
+        <img
+          src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&q=80"
+          alt="Modern high-quality farm machinery"
+        />
+        <div class="why-card-overlay">
+          <h3>Top Equipment</h3>
+          <p>Only the best machinery from trusted brands.</p>
+        </div>
+        <div class="why-card-badge">⚙️</div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ================================================
+       SECTION: TESTIMONIALS
+       Customer review cards — horizontally scrollable.
+  ================================================ -->
+  <div class="testimonials-section">
+
+    <div class="section-heading">
+      <h2>Loved by Modern Farmers</h2>
+      <p>Hear from our partners in the field.</p>
+    </div>
+
+    <div class="testimonials-scroll">
+
+      <div class="testimonial-card">
+        <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=200&q=80" alt="John Doe"/>
+        <h3>John Doe</h3>
+        <span class="role">Farm Owner</span>
+        <p class="quote">Excellent service and well-maintained machinery. AgriRent has transformed how we operate.</p>
+      </div>
+
+      <div class="testimonial-card">
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80" alt="Jane Smith"/>
+        <h3>Jane Smith</h3>
+        <span class="role">Cooperative Manager</span>
+        <p class="quote">Dependable equipment when I need it most. The team is always responsive and professional.</p>
+      </div>
+
+      <div class="testimonial-card">
+        <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=200&q=80" alt="Bob Miller"/>
+        <h3>Bob Miller</h3>
+        <span class="role">Agricultural Lead</span>
+        <p class="quote">The maintenance team is top-notch. Any breakdown is resolved within hours.</p>
+      </div>
+
+      <div class="testimonial-card">
+        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&q=80" alt="Alice Green"/>
+        <h3>Alice Green</h3>
+        <span class="role">Crop Specialist</span>
+        <p class="quote">My harvest went smoothly thanks to their harvesters. Best investment this season.</p>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ================================================
+       SECTION: FAQ
+       Accordion-style questions relevant to the company
+       and rental process. Toggling is handled by faq.js.
+  ================================================ -->
+  <div class="faq-section">
+
+    <!-- Left: heading column -->
+    <div class="faq-left">
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know about AgriRent and how we work.</p>
+    </div>
+
+    <!-- Right: clickable question rows -->
+    <div class="faq-right">
+
+      <!-- Question 1 -->
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <span>How long has AgriRent been operating?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-answer">
+        AgriRent was founded in 2010 and has been serving Jamaican farmers for
+        over 15 years. We started with 5 tractors in St. Catherine and now
+        operate island-wide with a fleet of 500+ machines.
+      </div>
+
+      <!-- Question 2 -->
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <span>Which parishes do you operate in?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-answer">
+        We deliver and collect across all 14 parishes in Jamaica. Delivery is
+        included in all weekly and seasonal hire packages at no extra charge.
+      </div>
+
+      <!-- Question 3 -->
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <span>Do you offer training on equipment use?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-answer">
+        Yes. All Professional plan customers receive a complimentary
+        equipment orientation session from one of our trained technicians
+        before first use.
+      </div>
+
+      <!-- Question 4 -->
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <span>Is maintenance included in the rental?</span>
+        <div class="faq-icon">+</div>
+      </div>
+      <div class="faq-answer">
+        All rentals include a full pre-delivery service check. Professional plan
+        customers also receive priority on-call maintenance throughout their hire period.
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ================================================
+       FOOTER
+       Same footer as all other pages.
+  ================================================ -->
+  <footer>
+    <div class="footer-wordmark">AgriRent</div>
+
+    <div class="footer-links">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <p class="footer-copy">© 2025 AgriRent Agricultural Solutions. All rights reserved.</p>
+  </footer>
+
+
+  <!-- ================================================
+       JAVASCRIPT
+       Shared FAQ accordion script.
+       Path uses ../ because this page is inside /pages/.
+  ================================================ -->
+  <script src="../js/faq.js"></script>
+
+</body>
+</html>

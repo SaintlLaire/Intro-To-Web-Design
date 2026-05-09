@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =============================================
+       META & HEAD — pages/contact.html
+       The Contact page provides a full contact form,
+       office information, and an embedded map placeholder.
+  ============================================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us — AgriRent Agricultural Equipment Rentals</title>
+
+  <!-- Google Fonts: Poppins -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Shared stylesheet (../ because this file is inside /pages/) -->
+  <link rel="stylesheet" href="../css/styles.css" />
+
+  <!-- Page-specific styles for the contact info cards and map -->
+  <style>
+
+    /* -----------------------------------------------
+       CONTACT INFO CARDS
+       Three small white pill-shaped cards below the
+       form showing phone, email, and address.
+    ----------------------------------------------- */
+    .contact-info-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    /* Individual info card */
+    .info-card {
+      background: #ffffff;
+      border-radius: 50px;       /* pill shape */
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 1;
+      min-width: 220px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+
+    /* Circular green icon on the left */
+    .info-card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background-color: #2d6a3f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .info-card-text h4 {
+      font-size: 13px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 2px;
+    }
+
+    .info-card-text p {
+      font-size: 12px;
+      color: #888;
+    }
+
+    /* -----------------------------------------------
+       MAP PLACEHOLDER
+       A styled div that acts as a stand-in for a
+       real Google Maps embed (requires an API key).
+    ----------------------------------------------- */
+    .map-placeholder {
+      width: 100%;
+      height: 280px;
+      background: #1c3a28;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 14px;
+      margin-top: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Image used as a decorative map background */
+    .map-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.4;
+      position: absolute;
+    }
+
+    /* Label over the map image */
+    .map-placeholder span {
+      position: relative;
+      z-index: 1;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    /* -----------------------------------------------
+       EXTENDED CONTACT FORM
+       The contact page has a more detailed form than
+       the quick form on the home page. Includes a
+       message textarea and a subject dropdown.
+    ----------------------------------------------- */
+    .contact-select {
+      display: block;
+      width: 100%;
+      padding: 14px 0;
+      border: none;
+      border-bottom: 1px solid #ddd;
+      font-size: 14px;
+      font-family: 'Poppins', sans-serif;
+      color: #888;
+      background: transparent;
+      margin-bottom: 24px;
+      outline: none;
+      appearance: none;         /* remove default dropdown arrow */
+      cursor: pointer;
+    }
+
+    .contact-select:focus {
+      border-bottom-color: #2d6a3f;
+      color: #1a1a1a;
+    }
+
+  </style>
+</head>
+<body>
+
+
+  <!-- ================================================
+       NAVIGATION BAR
+       "Contact Us" nav-cta is the current page — we
+       don't add .active to itself to avoid circular style.
+  ================================================ -->
+  <nav>
+    <a href="../index.html" class="nav-brand">AgriRent</a>
+
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+    </ul>
+
+    <!-- Nav CTA links back to this same page — greyed out with CSS pointer trick -->
+    <a href="contact.html" class="nav-cta" style="opacity:0.7; cursor:default;">Contact Us</a>
+  </nav>
+
+
+  <!-- ================================================
+       PAGE HERO BANNER
+       Dark green header with the page title.
+  ================================================ -->
+  <div class="page-hero">
+    <h1>Get in Touch</h1>
+    <p>
+      Have a question, need a custom quote, or want to book specific equipment?
+      Our team is ready to help — island-wide.
+    </p>
+  </div>
+
+
+  <!-- ================================================
+       SECTION: MAIN CONTACT FORM + SIDE CONTENT
+       Two-column layout:
+         LEFT  — detailed contact form card
+         RIGHT — location info + decorative map image
+  ================================================ -->
+  <div class="contact-section" id="contact">
+
+    <!-- ----------------------------------------
+         LEFT COLUMN: Extended Contact Form
+         Includes name, email, subject, message
+    ---------------------------------------- -->
+    <div class="contact-form-card">
+      <h2>Send Us a Message</h2>
+      <p>We respond to all enquiries within 1 business day.</p>
+
+      <!-- Full name field -->
+      <input
+        type="text"
+        placeholder="Your Full Name"
+        aria-label="Your Full Name"
+      />
+
+      <!-- Email address field -->
+      <input
+        type="email"
+        placeholder="Your Email Address"
+        aria-label="Your Email Address"
+      />
+
+      <!-- Phone number (optional) -->
+      <input
+        type="tel"
+        placeholder="Phone Number (optional)"
+        aria-label="Phone Number"
+      />
+
+      <!-- Subject dropdown — lets the team route enquiries correctly -->
+      <select class="contact-select" aria-label="Subject">
+        <option value="" disabled selected>Select a Subject</option>
+        <option value="rental">Equipment Rental Enquiry</option>
+        <option value="quote">Request a Custom Quote</option>
+        <option value="maintenance">Maintenance / Repairs</option>
+        <option value="pricing">Pricing &amp; Plans</option>
+        <option value="other">Other</option>
+      </select>
+
+      <!-- Multi-line message field — using textarea instead of input -->
+      <textarea
+        rows="4"
+        placeholder="Your Message"
+        aria-label="Your Message"
+      ></textarea>
+
+      <!-- Submit button -->
+      <button class="btn-submit">Send Message</button>
+    </div>
+
+
+    <!-- ----------------------------------------
+         RIGHT COLUMN: Office Info + Map Image
+         Shows contact details and a decorative
+         placeholder where a Google Map would go.
+    ---------------------------------------- -->
+    <div style="flex:1; min-width:280px; display:flex; flex-direction:column; gap:0;">
+
+      <!-- Office location info block -->
+      <div style="background:#fff; border-radius:20px; padding:32px; box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+        <h3 style="font-size:20px; font-weight:600; color:#1a1a1a; margin-bottom:6px;">Our Office</h3>
+        <p style="font-size:13px; color:#888; margin-bottom:24px;">
+          Visit us or contact us through any of the channels below.
+        </p>
+
+        <!-- Three pill info cards: address, phone, email -->
+        <div class="contact-info-row">
+
+          <!-- Address card -->
+          <div class="info-card">
+            <div class="info-card-icon">📍</div>
+            <div class="info-card-text">
+              <h4>Address</h4>
+              <p>12 Farm Road, Spanish Town, St. Catherine, Jamaica</p>
+            </div>
+          </div>
+
+          <!-- Phone card -->
+          <div class="info-card">
+            <div class="info-card-icon">📞</div>
+            <div class="info-card-text">
+              <h4>Phone</h4>
+              <p>+1 (876) 555-0194</p>
+            </div>
+          </div>
+
+          <!-- Email card -->
+          <div class="info-card">
+            <div class="info-card-icon">✉️</div>
+            <div class="info-card-text">
+              <h4>Email</h4>
+              <p>info@agrirent.com.jm</p>
+            </div>
+          </div>
+
+        </div><!-- end .contact-info-row -->
+
+        <!-- Map placeholder image
+             Replace with a real Google Maps <iframe> embed
+             by adding your API key in the src URL.
+        -->
+        <div class="map-placeholder">
+          <img
+            src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=800&q=80"
+            alt="Countryside location near our office"
+          />
+          <span>📍 Spanish Town, St. Catherine, Jamaica</span>
+        </div>
+
+      </div><!-- end office block -->
+    </div><!-- end right column -->
+
+  </div><!-- end .contact-section -->
+
+
+  <!-- ================================================
+       SECTION: BUSINESS HOURS + QUICK LINKS
+       A light grey informational strip showing opening
+       hours and quick links to other parts of the site.
+  ================================================ -->
+  <section style="background:#f0efed; padding:60px 8%;">
+
+    <div style="display:flex; gap:40px; flex-wrap:wrap; max-width:1100px; margin:0 auto;">
+
+      <!-- Business hours table -->
+      <div style="flex:1; min-width:260px;">
+        <h3 style="font-size:20px; font-weight:600; color:#1a1a1a; margin-bottom:20px;">Business Hours</h3>
+
+        <!-- Each row: day + hours -->
+        <div style="display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid #e0e0e0; font-size:14px; color:#555;">
+          <span>Monday – Friday</span>
+          <span style="font-weight:600; color:#2d6a3f;">8:00 AM – 6:00 PM</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid #e0e0e0; font-size:14px; color:#555;">
+          <span>Saturday</span>
+          <span style="font-weight:600; color:#2d6a3f;">9:00 AM – 3:00 PM</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid #e0e0e0; font-size:14px; color:#555;">
+          <span>Sunday</span>
+          <span style="font-weight:600; color:#888;">Closed</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; padding:12px 0; font-size:14px; color:#555;">
+          <span>Emergency Repairs (Pro Plan)</span>
+          <span style="font-weight:600; color:#2d6a3f;">24/7</span>
+        </div>
+      </div>
+
+      <!-- Quick links block -->
+      <div style="flex:1; min-width:260px;">
+        <h3 style="font-size:20px; font-weight:600; color:#1a1a1a; margin-bottom:20px;">Quick Links</h3>
+        <ul style="display:flex; flex-direction:column; gap:12px;">
+          <li>
+            <a href="services.html" style="font-size:14px; color:#2d6a3f; font-weight:500;">
+              → View Equipment Catalog
+            </a>
+          </li>
+          <li>
+            <a href="services.html#pricing" style="font-size:14px; color:#2d6a3f; font-weight:500;">
+              → See Rental Plans &amp; Pricing
+            </a>
+          </li>
+          <li>
+            <a href="about.html" style="font-size:14px; color:#2d6a3f; font-weight:500;">
+              → Learn About AgriRent
+            </a>
+          </li>
+          <li>
+            <a href="services.html#faq" style="font-size:14px; color:#2d6a3f; font-weight:500;">
+              → Read FAQs
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================
+       FOOTER — same across all pages
+  ================================================ -->
+  <footer>
+    <div class="footer-wordmark">AgriRent</div>
+
+    <div class="footer-links">
+      <a href="../index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <p class="footer-copy">© 2025 AgriRent Agricultural Solutions. All rights reserved.</p>
+  </footer>
+
+
+  <!-- ================================================
+       JAVASCRIPT — shared FAQ script (included for
+       consistency even if no FAQ is on this page)
+  ================================================ -->
+  <script src="../js/faq.js"></script>
+
+</body>
+</html>
