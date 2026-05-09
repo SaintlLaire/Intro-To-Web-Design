@@ -18,10 +18,11 @@
    9.  Pricing Plans
    10. FAQ Accordion
    11. Testimonials
-   12. Contact Form
-   13. Footer
-   14. Utility Classes
-   15. Responsive / Mobile Overrides
+   12. Store
+   13. Contact Form
+   14. Footer
+   15. Utility Classes
+   16. Responsive / Mobile Overrides
    ============================================================ */
 
 
@@ -32,28 +33,37 @@
    ============================================================ */
 :root {
   /* — Brand Colours — */
-  --green-dark:   #1c3a28;   /* deep forest green — used for dark section backgrounds */
-  --green-mid:    #2d6a3f;   /* primary action green — buttons, accents, icons */
-  --green-hover:  #235232;   /* darker shade for hover states on green elements */
-  --bg-light:     #f0efed;   /* warm off-white — main page background */
-  --white:        #ffffff;
-  --text-dark:    #1a1a1a;   /* near-black for headings */
-  --text-grey:    #888888;   /* muted grey for subtitles and meta text */
-  --text-body:    #555555;   /* slightly lighter for body paragraphs */
-  --border-light: #dddddd;   /* light divider lines */
+  --green-dark: #1c3a28;
+  /* deep forest green — used for dark section backgrounds */
+  --green-mid: #2d6a3f;
+  /* primary action green — buttons, accents, icons */
+  --green-hover: #235232;
+  /* darker shade for hover states on green elements */
+  --bg-light: #f0efed;
+  /* warm off-white — main page background */
+  --white: #ffffff;
+  --text-dark: #1a1a1a;
+  /* near-black for headings */
+  --text-grey: #888888;
+  /* muted grey for subtitles and meta text */
+  --text-body: #555555;
+  /* slightly lighter for body paragraphs */
+  --border-light: #dddddd;
+  /* light divider lines */
 
   /* — Typography — */
   --font-main: 'Poppins', sans-serif;
 
   /* — Border Radius — */
-  --radius-sm:   8px;
-  --radius-md:   16px;
-  --radius-lg:   20px;
-  --radius-pill: 50px;   /* creates pill / capsule shapes */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-pill: 50px;
+  /* creates pill / capsule shapes */
 
   /* — Shadows — */
-  --shadow-soft: 0 2px 20px rgba(0,0,0,0.08);
-  --shadow-card: 0 4px 24px rgba(0,0,0,0.10);
+  --shadow-soft: 0 2px 20px rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.10);
 
   /* — Transitions — */
   --transition: 0.3s ease;
@@ -68,7 +78,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;  /* padding is included inside element width */
+  box-sizing: border-box;
+  /* padding is included inside element width */
 }
 
 body {
@@ -106,10 +117,12 @@ img {
       of the screen as the user scrolls. Works on all pages.
    ============================================================ */
 nav {
-  position: fixed;           /* sticks to top — does not scroll away */
+  position: fixed;
+  /* sticks to top — does not scroll away */
   top: 16px;
   left: 50%;
-  transform: translateX(-50%);   /* centres the bar regardless of page width */
+  transform: translateX(-50%);
+  /* centres the bar regardless of page width */
   width: 90%;
   max-width: 1100px;
   background: var(--white);
@@ -118,7 +131,8 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 1000;             /* float above all other content */
+  z-index: 1000;
+  /* float above all other content */
   box-shadow: var(--shadow-soft);
 }
 
@@ -177,12 +191,14 @@ nav {
    ============================================================ */
 .hero {
   width: 100%;
-  height: 100vh;             /* fills the entire visible screen height */
+  height: 100vh;
+  /* fills the entire visible screen height */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
-  align-items: center;       /* vertically centre the text block */
+  align-items: center;
+  /* vertically centre the text block */
   padding: 0 8%;
   position: relative;
 }
@@ -191,8 +207,9 @@ nav {
 .hero::before {
   content: '';
   position: absolute;
-  inset: 0;                  /* shorthand for top:0; right:0; bottom:0; left:0 */
-  background: rgba(0,0,0,0.45);
+  inset: 0;
+  /* shorthand for top:0; right:0; bottom:0; left:0 */
+  background: rgba(0, 0, 0, 0.45);
 }
 
 /* Text content sits above the overlay (z-index: 1) */
@@ -213,7 +230,7 @@ nav {
 .hero-content p {
   font-size: 15px;
   font-weight: 300;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.7;
   margin-bottom: 36px;
 }
@@ -247,8 +264,8 @@ nav {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   color: var(--white);
   font-size: 18px;
   display: flex;
@@ -259,7 +276,7 @@ nav {
 }
 
 .btn-round-arrow:hover {
-  background: rgba(255,255,255,0.30);
+  background: rgba(255, 255, 255, 0.30);
 }
 
 
@@ -290,7 +307,7 @@ nav {
 }
 
 .section-heading.light p {
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* Centred variant */
@@ -320,14 +337,16 @@ nav {
   margin: 0 auto 60px auto;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  position: relative;        /* needed for absolute positioning of text overlay */
+  position: relative;
+  /* needed for absolute positioning of text overlay */
 }
 
 .about-banner img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.7;              /* darkens the image so text is readable */
+  opacity: 0.7;
+  /* darkens the image so text is readable */
 }
 
 /* Text centred over the banner image */
@@ -349,7 +368,7 @@ nav {
 
 .about-banner-text p {
   font-size: 13px;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
 }
 
@@ -371,7 +390,7 @@ nav {
 
 .growth-heading p {
   font-size: 13px;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* Flex row holding stat cards and the farmer photo */
@@ -447,19 +466,23 @@ nav {
 .catalog-scroll {
   display: flex;
   gap: 16px;
-  overflow-x: auto;           /* enables left–right scrolling */
+  overflow-x: auto;
+  /* enables left–right scrolling */
   padding-bottom: 20px;
-  scroll-snap-type: x mandatory;   /* snaps to each card as you scroll */
+  scroll-snap-type: x mandatory;
+  /* snaps to each card as you scroll */
 }
 
 /* Style the custom scrollbar (only visible on supporting browsers) */
 .catalog-scroll::-webkit-scrollbar {
   height: 4px;
 }
+
 .catalog-scroll::-webkit-scrollbar-track {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
 }
+
 .catalog-scroll::-webkit-scrollbar-thumb {
   background: var(--green-mid);
   border-radius: 4px;
@@ -471,7 +494,8 @@ nav {
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--white);
-  scroll-snap-align: start;  /* snaps to the left edge of each card */
+  scroll-snap-align: start;
+  /* snaps to the left edge of each card */
   flex-shrink: 0;
   position: relative;
   cursor: pointer;
@@ -479,7 +503,8 @@ nav {
 }
 
 .catalog-card:hover {
-  transform: translateY(-4px);   /* subtle lift on hover */
+  transform: translateY(-4px);
+  /* subtle lift on hover */
 }
 
 /* Equipment photo at the top of the card */
@@ -497,7 +522,7 @@ nav {
   right: 10px;
   width: 28px;
   height: 28px;
-  background: rgba(255,255,255,0.85);
+  background: rgba(255, 255, 255, 0.85);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -573,7 +598,8 @@ nav {
 }
 
 .why-card:hover img {
-  transform: scale(1.05);    /* zoom image slightly on hover */
+  transform: scale(1.05);
+  /* zoom image slightly on hover */
 }
 
 /* Dark gradient at the bottom of each card for text legibility */
@@ -583,7 +609,7 @@ nav {
   left: 0;
   right: 0;
   padding: 40px 14px 14px;
-  background: linear-gradient(transparent, rgba(0,0,0,0.65));
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.65));
   color: var(--white);
   text-align: left;
 }
@@ -596,7 +622,7 @@ nav {
 
 .why-card-overlay p {
   font-size: 11px;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.4;
 }
 
@@ -806,12 +832,13 @@ nav {
   color: #666;
   background: var(--white);
   border-radius: 0 0 20px 20px;
-  margin-top: -12px;         /* visually connects answer to the question row above */
+  margin-top: -12px;
+  /* visually connects answer to the question row above */
   line-height: 1.6;
 }
 
 /* CSS sibling selector — shows the answer when its question is open */
-.faq-item.open + .faq-answer {
+.faq-item.open+.faq-answer {
   display: block;
 }
 
@@ -916,7 +943,7 @@ nav {
   margin-bottom: 6px;
 }
 
-.contact-form-card > p {
+.contact-form-card>p {
   font-size: 13px;
   color: var(--text-grey);
   margin-bottom: 32px;
@@ -936,7 +963,8 @@ nav {
   background: transparent;
   margin-bottom: 24px;
   outline: none;
-  resize: none;              /* prevent textarea resizing */
+  resize: none;
+  /* prevent textarea resizing */
 }
 
 .contact-form-card input::placeholder,
@@ -985,6 +1013,448 @@ nav {
   object-fit: cover;
 }
 
+/* ============================================================
+   13. Store / Product Catalog
+       White rounded card with a giant AgriRent wordmark
+       and copyright line at the bottom.
+       Used on: all pages
+   ============================================================ */
+
+/* ── Product cards ── */
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card {
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+}
+
+/* ── Product container: prevents layout collapse when filtering ── */
+#productContainer {
+  min-height: 200px;
+}
+
+/* ── Empty state message ── */
+.empty-state {
+  color: #6c757d;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+/* ── Cards ── */
+.card-panel {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  height: 100%;
+}
+
+.store-heading {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 100px;
+}
+
+/* ── Info tiles ── */
+.info-tile {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.info-tile:last-of-type {
+  border-bottom: none;
+}
+
+.info-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  color: #3730a3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.info-tile h6 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+}
+
+.info-tile p {
+  font-size: 0.9rem;
+  color: #111827;
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.info-tile a {
+  color: #111827;
+  text-decoration: none;
+}
+
+.info-tile a:hover {
+  color: #1d4ed8;
+}
+
+/* ── Filter bar ── */
+.filter-bar {
+  background: var(--green-mid);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+  margin-bottom: 1.75rem;
+}
+
+.form-control,
+.form-select {
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.9rem;
+  padding: 0.55rem 0.9rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* ── Cards ── */
+.product-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.product-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.1rem 1.25rem 1.25rem;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.category-badge {
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.3em 0.7em;
+  border-radius: 20px;
+  background: #e0e7ff;
+  color: #3730a3;
+  text-transform: capitalize;
+}
+
+.btn-details {
+  background: #111827;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  transition: background 0.15s;
+}
+
+.btn-details:hover {
+  background: #1d4ed8;
+  color: #fff;
+}
+
+/* ── Empty state ── */
+#productContainer {
+  min-height: 220px;
+}
+
+.empty-state {
+  color: #9ca3af;
+  font-size: 1rem;
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.empty-state svg {
+  margin-bottom: 1rem;
+  opacity: 0.35;
+}
+
+/* ── Product details page ── */
+/* ── Product image ── */
+.product-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Detail panel ── */
+.detail-panel {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  height: 100%;
+}
+
+.category-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.35em 0.8em;
+  border-radius: 20px;
+  background: #e0e7ff;
+  color: #3730a3;
+  text-transform: capitalize;
+}
+
+.product-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0.5rem 0 0.25rem;
+  letter-spacing: -0.4px;
+}
+
+.stars {
+  color: #f59e0b;
+  font-size: 1rem;
+}
+
+.price-current {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.price-old {
+  font-size: 1rem;
+  text-decoration: line-through;
+  color: #9ca3af;
+  margin-left: 0.5rem;
+}
+
+.stock-badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35em 0.75em;
+  border-radius: 20px;
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.qty-input {
+  width: 85px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.95rem;
+}
+
+.qty-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.btn-rent {
+  background: var(--green-mid);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 0.65rem 1.5rem;
+  transition: background 0.15s;
+}
+
+.btn-rent:hover {
+  background: #1d4ed8;
+  color: #fff;
+}
+
+.btn-cart {
+  border: 2px solid #111827;
+  color: #111827;
+  background: transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 0.65rem 1.5rem;
+  transition: all 0.15s;
+}
+
+.btn-cart:hover {
+  background: #111827;
+  color: #fff;
+}
+
+.btn-back {
+  color: #6b7280;
+  font-size: 0.875rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn-back:hover {
+  color: #111827;
+}
+
+/* ── Tabs ── */
+.nav-tabs {
+  border-bottom: 2px solid #e5e7eb;
+  gap: 0.25rem;
+}
+
+.nav-tabs {
+  border-bottom: 2px solid #e5e7eb;
+  gap: 0.25rem;
+}
+
+.nav-tabs .nav-link-a {
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  color: #6b7280;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.6rem 1rem;
+  border-radius: 0;
+}
+
+.nav-tabs .nav-link-a.active {
+  background: #fff;
+  color: #111827;
+  border-bottom-color: #111827;
+  background: transparent;
+}
+
+.tab-content {
+  background: #fff;
+  border-radius: 0 0 12px 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.tab-content ul {
+  padding-left: 1.25rem;
+}
+
+.tab-content li {
+  margin-bottom: 0.4rem;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+/* ── Reviews ── */
+.reviews-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.review-card {
+  border: 1px solid #f3f4f6;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
+  background: #fafafa;
+}
+
+.review-card .reviewer-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #111827;
+}
+
+.review-card .review-stars {
+  color: #f59e0b;
+  font-size: 0.9rem;
+}
+
+.review-card .review-text {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin-top: 0.35rem;
+}
+
+.avg-rating-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #fef9c3;
+  color: #854d0e;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.35em 0.9em;
+  border-radius: 20px;
+}
+
+.review-form .form-control,
+.review-form .form-select {
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.875rem;
+}
+
+.review-form .form-control:focus,
+.review-form .form-select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.btn-submit-review {
+  background: #16a34a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 0.55rem 1.25rem;
+  font-size: 0.875rem;
+  transition: background 0.15s;
+}
+
+.btn-submit-review:hover {
+  background: #15803d;
+  color: #fff;
+}
 
 /* ============================================================
    13. FOOTER
@@ -995,7 +1465,8 @@ nav {
 footer {
   background: var(--white);
   border-radius: var(--radius-lg);
-  margin: 0 20px 20px;       /* small gap on left, right, and bottom */
+  margin: 0 20px 20px;
+  /* small gap on left, right, and bottom */
   padding: 60px 40px 30px;
   text-align: center;
   overflow: hidden;
@@ -1003,7 +1474,8 @@ footer {
 
 /* Giant display text — the AgriRent brand wordmark */
 .footer-wordmark {
-  font-size: clamp(60px, 13vw, 160px);  /* fluid size: scales with viewport */
+  font-size: clamp(60px, 13vw, 160px);
+  /* fluid size: scales with viewport */
   font-weight: 700;
   color: #1a2e1e;
   line-height: 0.9;
@@ -1056,7 +1528,8 @@ footer {
 /* Page header banner used at the top of inner pages (About, Services, Contact) */
 .page-hero {
   width: 100%;
-  padding: 160px 8% 80px;   /* top padding accounts for the fixed nav */
+  padding: 160px 8% 80px;
+  /* top padding accounts for the fixed nav */
   background-color: var(--green-dark);
   color: var(--white);
 }
@@ -1070,7 +1543,7 @@ footer {
 
 .page-hero p {
   font-size: 15px;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   max-width: 520px;
 }
 

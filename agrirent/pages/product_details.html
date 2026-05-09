@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details — My Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Shared stylesheet (all CSS lives here — one file for all pages) -->
+    <link rel="stylesheet" href="../css/styles.css" />
+</head>
+
+<body>
+
+    <!-- ================================================
+       NAVIGATION BAR
+       Floating pill navbar — fixed at the top.
+       "Home" link is marked .active so it appears bold/green.
+       The same nav block appears on every page.
+  ================================================ -->
+    <nav>
+        <!-- Brand logo / name (links back to home) -->
+        <a href="../index.html" class="nav-brand">AgriRent</a>
+
+        <!-- Page navigation links -->
+        <ul class="nav-links">
+            <li><a href="../index.html" class="active">Home</a></li>
+            <li><a href="../pages/about.html">About</a></li>
+            <li><a href="../pages/services.html">Services</a></li>
+            <li><a href="../pages/store.html">Store</a></li>
+        </ul>
+
+        <!-- Right-side CTA button (links to contact page) -->
+        <a href="../pages/contact.html" class="nav-cta">Contact Us</a>
+    </nav>
+
+    <div class="container mt-4 mb-5">
+
+        <div class="store-heading">
+
+        </div>
+
+        <!-- Back link -->
+        <a href="../pages/store.html" class="btn-back d-inline-flex align-items-center gap-1 mb-3">
+            ← Back to Inventory
+        </a>
+
+        <!-- Top section: image + details -->
+        <div class="row g-4 align-items-start">
+
+            <!-- Image -->
+            <div class="col-md-6">
+                <img id="productImage" class="product-img" alt="">
+            </div>
+
+            <!-- Details -->
+            <div class="col-md-6">
+                <div class="detail-panel">
+
+                    <span class="category-badge" id="productCategory"></span>
+                    <h1 class="product-title" id="productName"></h1>
+
+                    <!-- Stars -->
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <span class="stars" id="starsDisplay"></span>
+                        <small class="text-muted" id="reviewCountLabel"></small>
+                    </div>
+
+                    <!-- Price -->
+                    <p class="mb-2">
+                        <span class="price-current" id="productPrice"></span>
+                        <span class="price-old" id="oldPrice"></span>
+                    </p>
+
+                    <!-- Stock -->
+                    <p class="mb-3">
+                        <span class="stock-badge">✓ In Stock</span>
+                    </p>
+
+                    <!-- Quantity -->
+                    <div class="d-flex align-items-center gap-2 mb-4">
+                        <label class="fw-500 text-muted" style="font-size:0.875rem;">Qty:</label>
+                        <input type="number" class="qty-input" value="1" min="1">
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="d-flex gap-2 flex-wrap">
+                        <button class="btn btn-rent">Rent</button>
+                        <button class="btn btn-cart">Add to Cart</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="mt-4">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#desc">Description</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#specs">Specifications</button>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="desc">
+                    <p id="productDescription" class="mb-0 text-secondary" style="font-size:0.95rem;"></p>
+                </div>
+                <div class="tab-pane fade" id="specs">
+                    <ul>
+                        <li>Brand: Example Brand</li>
+                        <li>Warranty: 1 Year</li>
+                        <li>Condition: New</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviews -->
+        <div class="reviews-section mt-4">
+
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="mb-0 fw-700">Customer Reviews</h5>
+                <span id="averageRating" class="avg-rating-pill"></span>
+            </div>
+
+            <div id="reviewList" class="mb-4"></div>
+
+            <!-- Add review form -->
+            <div class="border-top pt-4 review-form">
+                <h6 class="fw-600 mb-3">Leave a Review</h6>
+                <div class="row g-2">
+                    <div class="col-md-6">
+                        <input type="text" id="reviewName" class="form-control" placeholder="Your name">
+                    </div>
+                    <div class="col-md-6">
+                        <select id="reviewRating" class="form-select">
+                            <option value="5">★★★★★ Excellent (5)</option>
+                            <option value="4">★★★★☆ Good (4)</option>
+                            <option value="3">★★★☆☆ Average (3)</option>
+                            <option value="2">★★☆☆☆ Poor (2)</option>
+                            <option value="1">★☆☆☆☆ Terrible (1)</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <textarea id="reviewComment" class="form-control" rows="3"
+                            placeholder="Share your experience..."></textarea>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-submit-review" id="submitReview" style="background: var(--green-mid);">Submit Review</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const PLACEHOLDER = "https://placehold.co/600x380?text=";
+
+        // ── Seed reviews shown before any user adds their own ──────────────────────
+        const SEED_REVIEWS = {
+            1: [
+                { name: "Marcus T.", rating: 5, comment: "Incredibly fast and handles everything I throw at it. Best laptop I've rented." },
+                { name: "Priya S.", rating: 4, comment: "Great performance for the price. Battery life could be a bit better though." },
+                { name: "Jordan K.", rating: 5, comment: "Smooth experience from start to finish. Would definitely rent again." }
+            ],
+            2: [
+                { name: "Aisha M.", rating: 5, comment: "The camera is absolutely stunning. Photos look professional straight out of the box." },
+                { name: "Devon R.", rating: 4, comment: "Really solid phone. Setup was quick and it runs everything without a hitch." },
+                { name: "Clara W.", rating: 3, comment: "Good phone overall but I expected a bit more from the battery at this price point." }
+            ],
+            3: [
+                { name: "Theo B.", rating: 5, comment: "The noise cancellation is top-tier. Perfect for working in busy environments." },
+                { name: "Simone L.", rating: 5, comment: "Incredibly comfortable for long sessions. Sound quality is rich and clear." },
+                { name: "Nathan G.", rating: 4, comment: "Really good headphones. Took a little time to pair but sounds great after that." }
+            ]
+        };
+
+        function starsHTML(rating) {
+            return "★".repeat(rating) + "☆".repeat(5 - rating);
+        }
+
+        function loadReviews(productId) {
+            const reviewList = document.getElementById("reviewList");
+            const avgEl = document.getElementById("averageRating");
+
+            // Merge seed reviews with any user-submitted ones
+            const seed = SEED_REVIEWS[productId] || [];
+            const userAdded = JSON.parse(localStorage.getItem("reviews_" + productId)) || [];
+            const reviews = [...seed, ...userAdded];
+
+            reviewList.innerHTML = "";
+
+            if (reviews.length === 0) {
+                reviewList.innerHTML = "<p class='text-muted' style='font-size:0.9rem;'>No reviews yet. Be the first!</p>";
+                avgEl.textContent = "";
+                return;
+            }
+
+            const total = reviews.reduce((sum, r) => sum + r.rating, 0);
+            const average = (total / reviews.length).toFixed(1);
+
+            avgEl.innerHTML = `★ ${average} <span style="font-weight:400;color:#92400e;">(${reviews.length} reviews)</span>`;
+
+            // Also update the stars in the detail panel
+            document.getElementById("starsDisplay").textContent = starsHTML(Math.round(average));
+            document.getElementById("reviewCountLabel").textContent = `${reviews.length} reviews`;
+
+            reviews.forEach(r => {
+                const card = document.createElement("div");
+                card.className = "review-card";
+                card.innerHTML = `
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="reviewer-name">${r.name}</span>
+                    <span class="review-stars">${starsHTML(r.rating)}</span>
+                </div>
+                <p class="review-text mb-0">${r.comment}</p>`;
+                reviewList.appendChild(card);
+            });
+        }
+
+        function addReview(productId) {
+            const name = document.getElementById("reviewName").value.trim();
+            const rating = parseInt(document.getElementById("reviewRating").value);
+            const comment = document.getElementById("reviewComment").value.trim();
+
+            if (!name || !comment) {
+                alert("Please fill in your name and review before submitting.");
+                return;
+            }
+
+            const userReviews = JSON.parse(localStorage.getItem("reviews_" + productId)) || [];
+            userReviews.push({ name, rating, comment });
+            localStorage.setItem("reviews_" + productId, JSON.stringify(userReviews));
+
+            document.getElementById("reviewName").value = "";
+            document.getElementById("reviewComment").value = "";
+
+            loadReviews(productId);
+        }
+
+        // ── Init ──────────────────────────────────────────────────────────────────
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const productData = localStorage.getItem("selectedProduct");
+
+            if (!productData) {
+                document.getElementById("productName").textContent = "No product selected.";
+                return;
+            }
+
+            const product = JSON.parse(productData);
+
+            // Image
+            const image = document.getElementById("productImage");
+            image.src = product.image;
+            image.alt = product.name;
+            image.onerror = function () {
+                this.onerror = null;
+                this.src = PLACEHOLDER + encodeURIComponent(product.name);
+            };
+
+            // Text fields
+            document.getElementById("productName").textContent = product.name;
+            document.getElementById("productPrice").textContent = "$" + product.price.toLocaleString();
+            document.getElementById("productDescription").textContent = product.description;
+            document.getElementById("productCategory").textContent = product.category || "General";
+
+            // Old price — show ~25% higher as a "was" price
+            const oldPrice = Math.round(product.price * 1.25 / 10) * 10;
+            document.getElementById("oldPrice").textContent = "$" + oldPrice.toLocaleString();
+
+            // Reviews
+            loadReviews(product.id);
+
+            document.getElementById("submitReview").addEventListener("click", function () {
+                addReview(product.id);
+            });
+        });
+    </script>
+</body>
+
+</html>
